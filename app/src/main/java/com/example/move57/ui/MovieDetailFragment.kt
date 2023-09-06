@@ -6,13 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import coil.load
-import com.example.move57.R
 import com.example.move57.databinding.FragmentMovieDetailBinding
 import com.example.move57.model.MovieModel
+import com.example.move57.model.RatingModel
 import com.example.move57.presenter.MovieDetailPresenter
 import com.example.move57.view.MovieDetailView
-import com.example.move57.view.MovieView
-import javax.inject.Inject
 
 
 class MovieDetailFragment : Fragment(), MovieDetailView {
@@ -47,13 +45,21 @@ class MovieDetailFragment : Fragment(), MovieDetailView {
         year: String,
         genre: String,
         poster: String,
-        awards: String
+        awards: String,
+        ratingModel: ArrayList<RatingModel>
     ) {
         binding.tvTitle.text = title
         binding.tvYear.text = year
         binding.tvGenre.text = genre
         binding.tvAwards.text = awards
         binding.imgPoster.load(poster)
+        binding.tvRatingValue1.text = ratingModel[0].Value
+        binding.tvRatingSource1.text = ratingModel[0].Source
+        binding.tvRatingValue2.text = ratingModel[1].Value
+        binding.tvRatingSource2.text = ratingModel[1].Source
+        binding.tvRatingValue3.text = ratingModel[2].Value
+        binding.tvRatingSource3.text = ratingModel[2].Source
+
     }
 
 

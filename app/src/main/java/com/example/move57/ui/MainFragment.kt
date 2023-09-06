@@ -49,11 +49,6 @@ class MainFragment : Fragment(), MovieView {
     }
 
 
-    override fun showMovie(movieModel: MovieModel) {
-        Log.e("OLOLO", "showMovie: $movieModel")
-        binding.ivMovie.load(movieModel.Poster)
-    }
-
     override fun sendMovie(movieModel: MovieModel) {
         findNavController().navigate(R.id.movieDetailFragment, bundleOf("key" to movieModel))
     }

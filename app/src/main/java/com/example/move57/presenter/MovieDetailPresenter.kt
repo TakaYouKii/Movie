@@ -12,7 +12,8 @@ class MovieDetailPresenter(private val movieDetailView: MovieDetailView){
             movieModel.Year,
             movieModel.Genre,
             movieModel.Poster,
-            movieModel.Awards
+            movieModel.Awards,
+            movieModel.Ratings
         )
     }
 
