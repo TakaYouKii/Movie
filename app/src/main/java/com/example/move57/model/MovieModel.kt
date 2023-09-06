@@ -3,15 +3,15 @@ package com.example.move57.model
 import java.io.Serializable
 
 data class MovieModel(
-    var title: String,
-    var year: String,
-    var genre: String,
-    var awards: String,
-    var poster: String,
-    var ratings: ArrayList<RatingModel>
+    var Title: String,
+    var Year: String,
+    var Genre: String,
+    var Awards: String,
+    var Poster: String,
+    var Ratings: ArrayList<RatingModel>
 ):Serializable
 
 data class RatingModel (
-    var value: String,
-    var source: String,
-)
+    var Value: String,
+    var Source: String,
+): Serializable

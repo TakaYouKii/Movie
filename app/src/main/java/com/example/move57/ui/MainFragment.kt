@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import coil.load
 import com.example.move57.R
 import com.example.move57.databinding.FragmentMainBinding
@@ -30,7 +32,6 @@ class MainFragment : Fragment(), MovieView {
         savedInstanceState: Bundle?
     ): View? {
         binding =FragmentMainBinding.inflate(layoutInflater)
-
         return binding.root
     }
 
@@ -41,16 +42,20 @@ class MainFragment : Fragment(), MovieView {
     }
 
     private fun initClicker() {
-
         binding.btnSend.setOnClickListener{
             presenter.getMovieDetail(binding.etTitle.text.toString())
+
         }
     }
 
 
     override fun showMovie(movieModel: MovieModel) {
         Log.e("OLOLO", "showMovie: $movieModel")
-        binding.ivMovie.load(movieModel.poster)
+        binding.ivMovie.load(movieModel.Poster)
+    }
+
+    override fun sendMovie(movieModel: MovieModel) {
+        findNavController().navigate(R.id.movieDetailFragment, bundleOf("key" to movieModel))
     }
 
     override fun showError(message: String) {

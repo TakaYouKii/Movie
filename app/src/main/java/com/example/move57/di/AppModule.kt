@@ -16,7 +16,7 @@ class AppModule {
     @Singleton
     @Provides
     fun provideApi(): MovieApi {
-        return Retrofit.Builder().baseUrl("https://www.omdbapi.com/")
+        return Retrofit.Builder().baseUrl("http://www.omdbapi.com/")
             .addConverterFactory(GsonConverterFactory.create()).build().create(MovieApi::class.java)
     }
 }
